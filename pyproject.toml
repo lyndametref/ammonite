@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "ammonite"
+version = "0.1.0"
+description = "Unit aware calculation of geometrical primitives' area, volumes, etc."
+authors = ["Lynda Metref <lynda.metref@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Pint = "^0.18"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+sphinx = "^4.4.0"
+sphinx-rtd-theme = "*"
+sphinx-autodoc-annotation = "^1.0-1"
+sphinx-autodoc-typehints = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
