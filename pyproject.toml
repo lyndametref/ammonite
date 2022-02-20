@@ -11,8 +11,9 @@ Pint = "^0.18"
 
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"
-pytest = "*"
 pytest-cov = "*"
+pytest = "*"
+flake8 = "^4.0.1"
 sphinx = "^4.4.0"
 sphinx-rtd-theme = "*"
 sphinx-autodoc-annotation = "^1.0-1"

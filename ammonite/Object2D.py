@@ -8,7 +8,8 @@ class Rectangle:
 
     @ureg.check(None, "[length]", "[length]")
     def __init__(self, width: pint.Quantity, length: pint.Quantity):
-        """Construct a rectangle from its width :math:`w` and length :math:`l` and compute its area :math:`A` and perimeter :math:`p`
+        """Construct a rectangle from its width :math:`w` and length :math:`l` and
+        compute its area :math:`A` and perimeter :math:`p`
 
         :param width: width of the rectangle. Is expected to be a `length` unit.
         :param length: length of the rectangle. Is expected to be a `length` unit.
@@ -28,13 +29,14 @@ class Square:
 
     @ureg.check(None, "[length]")
     def __init__(self, side: pint.Quantity):
-        """Construct a square from its side :math:`w` and compute its area :math:`A` and perimeter :math:`p`
+        """Construct a square from its side :math:`w` and compute its area :math:`A`
+        and perimeter :math:`p`
 
         :param side: Side of the square. Is expected to be a `length` unit.
         """
         self.side = side
         """Square side"""
-        self.area = self.side**2
+        self.area = self.side ** 2
         """Square area :math:`A = w \\cdot l`"""
         self.perimeter = self.side * 4
         """Square perimeter :math:`p = 2 \\cdot w \\cdot l`"""
@@ -67,8 +69,8 @@ class Circle:
 
     @ureg.check(None, "[length]")
     def __init__(self, radius: pint.Quantity):
-        """Construct a Circle from its radius :math:`r` and compute its diameter :math:`d`, area :math:`A` and perimeter
-        :math:`p`
+        """Construct a Circle from its radius :math:`r` and compute its diameter
+        :math:`d`, area :math:`A` and perimeter :math:`p`
 
         :param radius: radius of the circle. Is expected to be a `length` unit.
         """
@@ -76,14 +78,15 @@ class Circle:
         """Circle's radius"""
         self.diameter = 2 * self.radius
         """Circle's diameter :math:`d = 2 \\cdot r`"""
-        self.area = math.pi * self.radius**2
+        self.area = math.pi * self.radius ** 2
         """Circle's area :math:`A = \\pi \\cdot r^2`"""
         self.perimeter = 2 * math.pi * self.radius
         """Circle's perimeter :math:`p = 2 \\pi \\cdot r`"""
 
     @classmethod
     def from_diameter(cls, diameter: pint.Quantity):
-        """Construct a Circle, deducting its radius :math:`r` from its diameter :math:`d`.
+        """Construct a Circle, deducting its radius :math:`r` from its diameter
+        :math:`d`.
 
         :math:`r=\\frac{d}{2}`
 
@@ -105,7 +108,8 @@ class Circle:
 
     @classmethod
     def from_perimeter(cls, perimeter: pint.Quantity):
-        """Construct a Circle, deducting its radius :math:`r` from its perimeter :math:`p`:
+        """Construct a Circle, deducting its radius :math:`r` from its perimeter
+        :math:`p`:
 
         :math:`r = \\frac{p}{2\\pi}`
 

@@ -1,0 +1,55 @@
+image: python:3.9
+stages:
+  - test
+  - build
+  - deploy
+
+test-job:
+  stage: test
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry run pytest tests --cov
+
+lint-job:
+  stage: test
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry run flake8 . --statistics
+
+build-docs:
+  stage: build
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry run sphinx-build -b html docs/source/ docs/build
+  artifacts:
+    paths:
+      - docs/build
+
+build-wheel:
+  stage: build
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry build
+    - twine check dist/*
+  artifacts:
+    paths:
+      - dist/*.whl
+
+publish:
+  stage: deploy
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - twine upload dist/*
+  only:
+    - main
+    - dev

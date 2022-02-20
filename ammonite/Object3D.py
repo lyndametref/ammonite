@@ -10,8 +10,8 @@ class Box:
     def __init__(
         self, width: pint.Quantity, depth: pint.Quantity, height: pint.Quantity
     ):
-        """Construct Box from its width :math:`w`, depth :math:`d`, height :math:`h` and compute its volume :math:`V`
-        and area :math:`A`
+        """Construct Box from its width :math:`w`, depth :math:`d`, height :math:`h`
+        and compute its volume :math:`V` and area :math:`A`
 
         :param width: width of the box. Is expected to be a `length` unit.
         :param depth: depth of the box. Is expected to be a `length` unit.
@@ -38,7 +38,8 @@ class Cube:
 
     @ureg.check(None, "[length]")
     def __init__(self, side: pint.Quantity):
-        """Construct a Cube from its side :math:`w` and compute its volume :math:`V` and area :math:`A`
+        """Construct a Cube from its side :math:`w` and compute its volume :math:`V`
+        and area :math:`A`
 
         :param side: side of the cube. Is expected to be a `length` unit.
         """
@@ -51,7 +52,8 @@ class Cube:
 
     @classmethod
     def from_volume(cls, volume: pint.Quantity):
-        """Construct Cube from its volume, deducting its side :math:`w` from its volume :math:`V`
+        """Construct Cube from its volume, deducting its side :math:`w` from its
+        volume :math:`V`
 
         :math:`w = \\root{3}\\of{V}`
 
@@ -62,7 +64,8 @@ class Cube:
 
     @classmethod
     def from_area(cls, area: pint.Quantity):
-        """Construct Cube from its area, deducting its side :math:`w` from its area :math:`A`
+        """Construct Cube from its area, deducting its side :math:`w` from its area
+        :math:`A`
 
         :math:`w = \\sqrt{\\frac{A}{6}}`
 
@@ -77,7 +80,8 @@ class Sphere:
 
     @ureg.check(None, "[length]")
     def __init__(self, radius):
-        """Construct a Sphere from its radius and compute its diameter :math:`d`, volume :math:`V` and area :math:`A`
+        """Construct a Sphere from its radius and compute its diameter :math:`d`,
+        volume :math:`V` and area :math:`A`
 
         :param radius: radius of the sphere. Is expected to be a `length` unit.
         """
@@ -92,7 +96,8 @@ class Sphere:
 
     @classmethod
     def from_diameter(cls, diameter: pint.Quantity):
-        """Construct a Sphere from its diameter, deducting its radius :math:`r` from its diameter :math:`d`
+        """Construct a Sphere from its diameter, deducting its radius :math:`r` from
+        its diameter :math:`d`
 
         :math:`r=\\frac{d}{2}`
 
@@ -103,7 +108,8 @@ class Sphere:
 
     @classmethod
     def from_volume(cls, volume: pint.Quantity):
-        """Construct a Sphere from its volume, deducting its radius :math:`r` from its volume :math:`V`
+        """Construct a Sphere from its volume, deducting its radius :math:`r` from
+        its volume :math:`V`
 
         :math:`r=\\root{3}\\of{\\frac{3 \\cdot V}{4 \\pi}}`
 
@@ -114,7 +120,8 @@ class Sphere:
 
     @classmethod
     def from_area(cls, area: pint.Quantity):
-        """Construct a Sphere from its area, deducting its radius :math:`r` from its area :math:`A`
+        """Construct a Sphere from its area, deducting its radius :math:`r` from its
+        area :math:`A`
 
         :math:`r=\\sqrt{\\frac{A}{4 \\pi}}`
 
