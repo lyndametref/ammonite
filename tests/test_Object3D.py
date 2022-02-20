@@ -19,15 +19,15 @@ def sphere():
 
 
 def test_box(box):
-    assert box.volume.check('[length]**3')
-    assert box.area.check('[length]**2')
+    assert box.volume.check("[length]**3")
+    assert box.area.check("[length]**2")
     assert box.volume.magnitude == pytest.approx(24)
     assert box.area.magnitude == pytest.approx(52)
 
 
 def test_cube(cube):
-    assert cube.volume.check('[length]**3')
-    assert cube.area.check('[length]**2')
+    assert cube.volume.check("[length]**3")
+    assert cube.area.check("[length]**2")
     assert cube.volume.magnitude == pytest.approx(8)
     assert cube.area.magnitude == pytest.approx(24)
 
@@ -45,8 +45,8 @@ def test_cube_from_area():
 
 
 def test_sphere(sphere):
-    assert sphere.volume.check('[length]**3')
-    assert sphere.area.check('[length]**2')
+    assert sphere.volume.check("[length]**3")
+    assert sphere.area.check("[length]**2")
     assert sphere.diameter.magnitude == pytest.approx(4)
     assert sphere.volume.magnitude == pytest.approx(33.51032)
     assert sphere.area.magnitude == pytest.approx(50.26548)
@@ -60,14 +60,14 @@ def test_sphere_from_diameter():
 
 
 def test_sphere_from_volume():
-    sphere = Sphere.from_volume(volume=33.51032 * ureg.m ** 3)
+    sphere = Sphere.from_volume(volume=33.51032 * ureg.m**3)
     assert sphere.area.magnitude == pytest.approx(50.26548)
     assert sphere.radius.magnitude == pytest.approx(2)
     assert sphere.diameter.magnitude == pytest.approx(4)
 
 
 def test_sphere_from_area():
-    sphere = Sphere.from_area(area=50.26548 * ureg.m ** 2)
+    sphere = Sphere.from_area(area=50.26548 * ureg.m**2)
     assert sphere.volume.magnitude == pytest.approx(33.51032)
     assert sphere.radius.magnitude == pytest.approx(2)
     assert sphere.diameter.magnitude == pytest.approx(4)

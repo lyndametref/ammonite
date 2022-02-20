@@ -10,6 +10,7 @@ python = "^3.9"
 Pint = "^0.18"
 
 [tool.poetry.dev-dependencies]
+black = "^22.1.0"
 pytest = "*"
 pytest-cov = "*"
 sphinx = "^4.4.0"
