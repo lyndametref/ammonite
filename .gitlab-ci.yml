@@ -38,7 +38,7 @@ build-wheel:
     - poetry install
   script:
     - poetry build
-    - twine check dist/*
+    - poetry run twine check dist/*
   artifacts:
     paths:
       - dist/*.whl
@@ -49,7 +49,16 @@ publish:
     - pip install poetry
     - poetry install
   script:
-    - twine upload dist/*
+    - poetry run twine upload dist/*
+  only:
+    - main
+    - dev
+
+github-push:
+  stage: deploy
+  script:
+    - git remote add github https://github.com/lyndametref/ammonite
+    - git push github main
   only:
     - main
     - dev

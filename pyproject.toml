@@ -3,7 +3,8 @@ name = "ammonite"
 version = "0.1.0"
 description = "Unit aware calculation of geometrical primitives' area, volumes, etc."
 authors = ["Lynda Metref <lynda.metref@gmail.com>"]
-license = "MIT"
+license = "GPLv3"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -14,6 +15,7 @@ black = "^22.1.0"
 pytest-cov = "*"
 pytest = "*"
 flake8 = "^4.0.1"
+twine = "^3.8.0"
 sphinx = "^4.4.0"
 sphinx-rtd-theme = "*"
 sphinx-autodoc-annotation = "^1.0-1"

@@ -36,7 +36,7 @@ class Square:
         """
         self.side = side
         """Square side"""
-        self.area = self.side ** 2
+        self.area = self.side**2
         """Square area :math:`A = w \\cdot l`"""
         self.perimeter = self.side * 4
         """Square perimeter :math:`p = 2 \\cdot w \\cdot l`"""
@@ -78,7 +78,7 @@ class Circle:
         """Circle's radius"""
         self.diameter = 2 * self.radius
         """Circle's diameter :math:`d = 2 \\cdot r`"""
-        self.area = math.pi * self.radius ** 2
+        self.area = math.pi * self.radius**2
         """Circle's area :math:`A = \\pi \\cdot r^2`"""
         self.perimeter = 2 * math.pi * self.radius
         """Circle's perimeter :math:`p = 2 \\pi \\cdot r`"""
