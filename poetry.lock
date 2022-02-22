@@ -771,10 +771,13 @@ python-versions = ">=3.7"
 docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.0.1)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
+[extras]
+docs = []
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "0e9d1c538b7f61864e3924d50971902edc4c391201960fabbc7dbfeb7773d223"
+content-hash = "83149bab32cf58a7d4e5c316976851d253601a53bfffdf1b9e1536514386d793"
 
 [metadata.files]
 alabaster = [
