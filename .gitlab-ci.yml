@@ -1,4 +1,11 @@
 image: python:3.9
+cache:
+  key:
+    files:
+      - poetry.lock
+  paths:
+    - /root/.cache/pypoetry/virtualenvs
+
 stages:
   - test
   - build
