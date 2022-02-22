@@ -1,0 +1,71 @@
+image: python:3.9
+cache:
+  key:
+    files:
+      - poetry.lock
+  paths:
+    - /root/.cache/pypoetry/virtualenvs
+
+stages:
+  - test
+  - build
+  - deploy
+
+test-job:
+  stage: test
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry run pytest tests --cov
+
+lint-job:
+  stage: test
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry run flake8 . --statistics
+
+build-docs:
+  stage: build
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry run sphinx-build -b html docs/source/ docs/build
+  artifacts:
+    paths:
+      - docs/build
+
+build-wheel:
+  stage: build
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry build
+    - poetry run twine check dist/*
+  artifacts:
+    paths:
+      - dist/*.whl
+
+publish:
+  stage: deploy
+  before_script:
+    - pip install poetry
+    - poetry install
+  script:
+    - poetry run twine upload dist/*
+  only:
+    - main
+    - dev
+
+github-push:
+  stage: deploy
+  script:
+    - git remote add github https://github.com/lyndametref/ammonite
+    - git push github main
+  only:
+    - main
+    - dev
