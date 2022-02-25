@@ -13,7 +13,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../.."))  # Source code dir relative to this file
+sys.path.insert(0, os.path.abspath(".."))  # Source code dir relative to this file
 
 # -- General configuration ---------------------------------------------------
 
@@ -28,8 +28,6 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
-    "sphinx.ext.intersphinx",
-    "sphinx_autodoc_typehints",
 ]
 
 intersphinx_mapping = {
